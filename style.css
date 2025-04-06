@@ -1,0 +1,294 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto+Slab:wght@400;700&display=swap');
+
+/* Variables for easier theme management */
+:root {
+    --primary-color: #4a90e2; /* A slightly softer, modern blue */
+    --secondary-color: #50e3c2; /* A vibrant teal/mint */
+    --text-color: #333;
+    --heading-color: #2c3e50; /* Dark blue-grey */
+    --background-color: #fdfdff; /* Almost white, very light */
+    --card-background: #ffffff;
+    --border-color: #e0e5ec; /* Light grey for borders */
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --font-body: 'Poppins', sans-serif;
+    --font-heading: 'Roboto Slab', serif;
+}
+
+/* General Styles */
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    margin: 0 auto;
+    max-width: 1000px; /* Slightly wider */
+    padding: 40px 25px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-weight: 300; /* Lighter default font weight */
+}
+
+/* Header Styles */
+header {
+    /* text-align: center; Remove center alignment */
+    display: flex; /* Use Flexbox */
+    align-items: center; /* Vertically align items */
+    gap: 30px; /* Space between image and text */
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 160px; /* Slightly larger */
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* margin-bottom: 20px; Remove bottom margin */
+    border: 6px solid var(--card-background);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); /* Slightly stronger shadow */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Header Text Container */
+.header-text {
+    text-align: left; /* Align text to the left */
+}
+
+header h1 {
+    /* Corrected h1 styles - removed photo styles */
+    font-family: var(--font-heading);
+    margin-bottom: 8px;
+    font-size: 3.2em; /* Larger */
+    color: var(--heading-color);
+    font-weight: 700; /* Bolder heading */
+    letter-spacing: -1px;
+}
+
+header h2 {
+    font-family: var(--font-body);
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 1.6em;
+}
+
+header p {
+    margin-top: 15px;
+    font-size: 1.05em; /* Slightly larger contact info */
+    color: #555;
+}
+
+header a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+}
+
+header a:hover {
+    color: var(--secondary-color); /* Use secondary color on hover */
+    border-bottom: 1px solid var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 45px;
+    padding: 30px; /* More padding */
+    background-color: var(--card-background);
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 4px 12px var(--shadow-color); /* Softer, larger shadow */
+    border: 1px solid var(--border-color); /* Subtle border */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+section:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Headings */
+h3 {
+    font-family: var(--font-heading);
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--primary-color);
+    font-size: 1.8em; /* Larger section titles */
+    font-weight: 700;
+    display: inline-block;
+}
+
+h4 {
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+    color: var(--primary-color); /* Use primary color for job titles */
+    font-size: 1.3em;
+    font-weight: 600;
+}
+
+h5 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-style: normal;
+    color: #777; /* Lighter grey for dates/company */
+    font-weight: 400;
+    font-size: 1em;
+}
+
+/* Lists */
+ul {
+    padding-left: 20px; /* Adjust padding */
+    margin-top: 15px;
+    list-style: none; /* Remove default bullets */
+}
+
+li {
+    margin-bottom: 12px;
+    color: #444; /* Slightly darker list text */
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+}
+
+li::before {
+    content: ''; /* Custom bullet */
+    position: absolute;
+    left: 0;
+    top: 9px; /* Adjust vertical alignment */
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-color); /* Use secondary color */
+    border-radius: 50%;
+}
+
+/* Experience Section */
+#experience article {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border-color); /* Solid, lighter border */
+}
+#experience article:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* Certificates Section */
+#certificates ul {
+    padding-left: 0;
+    columns: 2;
+    column-gap: 40px;
+}
+
+#certificates li {
+    margin-bottom: 10px;
+    font-size: 1em;
+    padding-left: 28px; /* Adjust for icon */
+}
+#certificates li::before {
+    content: "🏆"; /* Trophy icon */
+    font-size: 1.1em;
+    position: absolute;
+    left: 0;
+    top: 1px; /* Adjust alignment */
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border-radius: 0;
+    color: var(--primary-color);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Wider minmax */
+    gap: 18px;
+}
+
+.skills-grid div {
+    background: linear-gradient(145deg, #eaf2f8, #ffffff); /* Subtle gradient */
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--heading-color);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.skills-grid div:hover {
+    transform: translateY(-4px) scale(1.02); /* More pronounced hover effect */
+    box-shadow: 0 6px 12px var(--shadow-color);
+    background-color: #ffffff;
+}
+
+.skills-grid strong {
+    font-weight: 600; /* Bolder skill category */
+    color: var(--primary-color); /* Use primary color */
+    margin-right: 8px;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.95em;
+    color: #888;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 30px 15px;
+    }
+    header h1 {
+        font-size: 2.6em;
+    }
+    header h2 {
+        font-size: 1.4em;
+    }
+    h3 {
+        font-size: 1.6em;
+    }
+    section {
+        padding: 20px;
+    }
+    #certificates ul {
+        columns: 1;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    header h2 {
+        font-size: 1.2em;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+    li {
+        padding-left: 20px; /* Adjust for smaller screens */
+    }
+    li::before {
+        left: -5px; /* Adjust bullet position */
+    }
+    #certificates li::before {
+        left: 0;
+    }
+}
